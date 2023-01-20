@@ -14,7 +14,7 @@
 -- - An actor can be in multiple movies.
 -- - Everything you need to do in this assignment is marked with TODO!
 
-INSERT batman
+
 DROP TABLE IF EXISTS studio;
 DROP TABLE IF EXISTS cast;
 DROP TABLE IF EXISTS actor;
@@ -23,20 +23,30 @@ CREATE TABLE studio (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     movie_name TEXT,
     movie_year TEXT,
-    rating TEXT,
+    mpaa_rating TEXT,
     studio_name TEXT,
     )
-)
+INSERT INTO studio (movie_name, movie_year, mpaa_rating, studio_name)
+VALUES
+    ("Batman Begins", "2005", "PG-13", "Warner Bros."),
+    ("The Dark Knight", "2008", "PG-13", "Warner Bros."),
+    ("The Dark Knight Rises", "2012", "PG-13", "Warner Bros.");
+
 CREATE TABLE cast (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     movie_name TEXT,
     actor_name TEXT,
-    movie_character TEXT,
-)
+    movie_character TEXT)
+INSERT INTO cast(movie_name, actor_name, movie_character)
+VALUES
+    ("Batman Begins", "Christian Bale", "Bruce Wayne"),
+    ("Batman Begins", "Michael Caine", "Alfred"),
+    ("Batman Begins","Liam Neeson", "Ra's Al Ghul"):
+
 CREATE TABLE actors(
     id INTEGER PRIMARY KEY AUTOINCREMENT
     actor_id INTEGER,
-    actor_name)
+    actor_name TEXT)
 )
 -- User stories
 --

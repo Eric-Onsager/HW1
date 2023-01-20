@@ -14,6 +14,30 @@
 -- - An actor can be in multiple movies.
 -- - Everything you need to do in this assignment is marked with TODO!
 
+INSERT batman
+DROP TABLE IF EXISTS studio;
+DROP TABLE IF EXISTS cast;
+DROP TABLE IF EXISTS actor;
+
+CREATE TABLE studio (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    movie_name TEXT,
+    movie_year TEXT,
+    rating TEXT,
+    studio_name TEXT,
+    )
+)
+CREATE TABLE cast (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    movie_name TEXT,
+    actor_name TEXT,
+    movie_character TEXT,
+)
+CREATE TABLE actors(
+    id INTEGER PRIMARY KEY AUTOINCREMENT
+    actor_id INTEGER,
+    actor_name)
+)
 -- User stories
 --
 -- - As a guest, I want to see a list of movies with the title, year released,

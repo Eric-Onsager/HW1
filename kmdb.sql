@@ -15,6 +15,7 @@
 -- - Everything you need to do in this assignment is marked with TODO!
 
 
+SELECT movie_name FROM studio WHERE movie_year = "2005";
 DROP TABLE IF EXISTS studio;
 DROP TABLE IF EXISTS cast;
 DROP TABLE IF EXISTS actor;
@@ -48,6 +49,8 @@ CREATE TABLE actors(
     actor_id INTEGER,
     actor_name TEXT)
 )
+
+
 -- User stories
 --
 -- - As a guest, I want to see a list of movies with the title, year released,

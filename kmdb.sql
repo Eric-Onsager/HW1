@@ -17,6 +17,9 @@ DROP TABLE IF EXISTS studio;
 DROP TABLE IF EXISTS cast;
 DROP TABLE IF EXISTS actor;
 
+.mode column
+.headers off 
+
 CREATE TABLE studio (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     movie_name TEXT,
@@ -37,7 +40,7 @@ CREATE TABLE actors(
     actor_name TEXT
 );
 
-INSERT INTO actors (actor_id, actor_name)
+INSERT INTO actors (actor_name)
 VALUES
     ("Christian Bale"),
     ("Michael Caine"),
@@ -76,11 +79,16 @@ VALUES
     ("The Dark Knight Rises", "Anne Hathaway", "Selina Kyle")
 ;
 
+.print "Movies"
+.print "======"
+.print ""
+SELECT movie_name, movie_year, mpaa_rating, studio_name FROM studio;
 
+.print "Top Cast"
+.print "======"
+.print ""
 
-
-
-SELECT movie_character FROM cast WHERE actor_name IS "Christian Bale";
+ SELECT movie_name, actor_name, movie_character FROM cast;
 
 -- User stories
 --
@@ -178,18 +186,13 @@ SELECT movie_character FROM cast WHERE actor_name IS "Christian Bale";
 -- TODO!
 
 -- Prints a header for the movies output
-.print "Movies"
-.print "======"
-.print ""
+
 
 -- The SQL statement for the movies output
 -- TODO!
 
 -- Prints a header for the cast output
-.print ""
-.print "Top Cast"
-.print "========"
-.print ""
+
 
 
 -- The SQL statement for the cast output

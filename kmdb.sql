@@ -15,7 +15,7 @@
 -- - Everything you need to do in this assignment is marked with TODO!
 DROP TABLE IF EXISTS studio;
 DROP TABLE IF EXISTS cast;
-DROP TABLE IF EXISTS actor;
+
 
 .mode column
 .headers off 
@@ -35,24 +35,6 @@ CREATE TABLE cast (
     movie_character TEXT
     );
 
-CREATE TABLE actors(
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    actor_name TEXT
-);
-
-INSERT INTO actors (actor_name)
-VALUES
-    ("Christian Bale"),
-    ("Michael Caine"),
-    ("Liam Neeson"),
-    ("Katie Holmes"),
-    ("Gary Oldman"),
-    ("Heath Ledger"),
-    ("Aaron Eckhart"),
-    ("Maggie Gyllenhaal"),
-    ("Tom Hardy"),
-    ("Joseph Gordon-Levitt"),
-    ("Anne Hathaway");
 
 INSERT INTO studio (movie_name, movie_year, mpaa_rating, studio_name)
 VALUES
@@ -84,6 +66,7 @@ VALUES
 .print ""
 SELECT movie_name, movie_year, mpaa_rating, studio_name FROM studio;
 
+.print ""
 .print "Top Cast"
 .print "======"
 .print ""

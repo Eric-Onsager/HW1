@@ -35,6 +35,10 @@ CREATE TABLE cast (
     movie_character TEXT
     );
 
+CREATE TABLE actors(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    actor_name TEXT
+);
 
 INSERT INTO studio (movie_name, movie_year, mpaa_rating, studio_name)
 VALUES
@@ -60,6 +64,20 @@ VALUES
     ("The Dark Knight Rises", "Joseph Gordon-Levitt", "John Blake"),
     ("The Dark Knight Rises", "Anne Hathaway", "Selina Kyle")
 ;
+
+INSERT INTO actors (actor_name)
+VALUES
+    ("Christian Bale"),
+    ("Michael Caine"),
+    ("Liam Neeson"),
+    ("Katie Holmes"),
+    ("Gary Oldman"),
+    ("Heath Ledger"),
+    ("Aaron Eckhart"),
+    ("Maggie Gyllenhaal"),
+    ("Tom Hardy"),
+    ("Joseph Gordon-Levitt"),
+    ("Anne Hathaway");
 
 .print "Movies"
 .print "======"

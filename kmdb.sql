@@ -34,14 +34,22 @@ CREATE TABLE cast (
 
 CREATE TABLE actors(
     id INTEGER PRIMARY KEY AUTOINCREMENT,
-    actor_id INTEGER,
     actor_name TEXT
 );
 
 INSERT INTO actors (actor_id, actor_name)
 VALUES
-    (1, "Christian Bale"),
-    (2, )
+    ("Christian Bale"),
+    ("Michael Caine"),
+    ("Liam Neeson"),
+    ("Katie Holmes"),
+    ("Gary Oldman"),
+    ("Heath Ledger"),
+    ("Aaron Eckhart"),
+    ("Maggie Gyllenhaal"),
+    ("Tom Hardy"),
+    ("Joseph Gordon-Levitt"),
+    ("Anne Hathaway");
 
 INSERT INTO studio (movie_name, movie_year, mpaa_rating, studio_name)
 VALUES

@@ -13,9 +13,6 @@
 --   a movie belongs to a single studio.
 -- - An actor can be in multiple movies.
 -- - Everything you need to do in this assignment is marked with TODO!
-
-
-SELECT movie_name FROM studio WHERE movie_year = "2005";
 DROP TABLE IF EXISTS studio;
 DROP TABLE IF EXISTS cast;
 DROP TABLE IF EXISTS actor;
@@ -25,31 +22,57 @@ CREATE TABLE studio (
     movie_name TEXT,
     movie_year TEXT,
     mpaa_rating TEXT,
-    studio_name TEXT,
-    )
+    studio_name TEXT
+);
+
+CREATE TABLE cast (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    movie_name TEXT,
+    actor_name TEXT,
+    movie_character TEXT
+    );
+
+CREATE TABLE actors(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    actor_id INTEGER,
+    actor_name TEXT
+);
+
+INSERT INTO actors (actor_id, actor_name)
+VALUES
+    (1, "Christian Bale"),
+    (2, )
+
 INSERT INTO studio (movie_name, movie_year, mpaa_rating, studio_name)
 VALUES
     ("Batman Begins", "2005", "PG-13", "Warner Bros."),
     ("The Dark Knight", "2008", "PG-13", "Warner Bros."),
     ("The Dark Knight Rises", "2012", "PG-13", "Warner Bros.");
 
-CREATE TABLE cast (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    movie_name TEXT,
-    actor_name TEXT,
-    movie_character TEXT)
-INSERT INTO cast(movie_name, actor_name, movie_character)
+INSERT INTO cast (movie_name, actor_name, movie_character)
 VALUES
     ("Batman Begins", "Christian Bale", "Bruce Wayne"),
     ("Batman Begins", "Michael Caine", "Alfred"),
-    ("Batman Begins","Liam Neeson", "Ra's Al Ghul"):
+    ("Batman Begins","Liam Neeson", "Ra's Al Ghul"),
+    ("Batman Begins", "Katie Homes", "Rachel Dawes"),
+    ("Batman Begins", "Gary Oldman", "Commissioner Gordon"),
+    ("The Dark Knight", "Christian Bale", "Bruce Wayne"),
+    ("The Dark Knight", "Heath Ledger", "Joker"),
+    ("The Dark Knight", "Aaron Eckhart", "Harvey Dent"),
+    ("The Dark Knight", "Michael Caine", "Alfred"),
+    ("The Dark Knight", "Maggie Gyllenhaal", "Rachel Dawes"),
+    ("The Dark Knight Rises", "Christian Bale", "Bruce Wayne"),
+    ("The Dark Knight Rises", "Gary Oldman", "Commissioner Gordon"),
+    ("The Dark Knight Rises", "Tom Hardy", "Bane"),
+    ("The Dark Knight Rises", "Joseph Gordon-Levitt", "John Blake"),
+    ("The Dark Knight Rises", "Anne Hathaway", "Selina Kyle")
+;
 
-CREATE TABLE actors(
-    id INTEGER PRIMARY KEY AUTOINCREMENT
-    actor_id INTEGER,
-    actor_name TEXT)
-)
 
+
+
+
+SELECT movie_character FROM cast WHERE actor_name IS "Christian Bale";
 
 -- User stories
 --
